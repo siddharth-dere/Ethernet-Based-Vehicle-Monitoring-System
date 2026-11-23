@@ -1,0 +1,6 @@
+Dashboard ECU Listening on UDP port 8080...
+[DASHBOARD UDP] Speed: 1 km/h | RPM: 820 | Steering: 5.0 deg
+[DASHBOARD UDP] Speed: 2 km/h | RPM: 840 | Steering: -1.0 deg
+[DASHBOARD UDP] Speed: 3 km/h | RPM: 860 | Steering: -4.0 deg
+[DASHBOARD UDP] Speed: 4 km/h | RPM: 880 | Steering: 1.0 deg
+[DASHBOARD UDP] Speed: 5 km/h | RPM: 900 | Steering: -3.0 deg

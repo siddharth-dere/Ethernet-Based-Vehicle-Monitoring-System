@@ -1,0 +1,6 @@
+Dashboard ECU Listening on TCP port 8080...
+[DASHBOARD TCP] Speed: 1 km/h | RPM: 820 | Steering: 1.0 deg
+[DASHBOARD TCP] Speed: 2 km/h | RPM: 840 | Steering: -3.0 deg
+[DASHBOARD TCP] Speed: 3 km/h | RPM: 860 | Steering: 1.0 deg
+[DASHBOARD TCP] Speed: 4 km/h | RPM: 880 | Steering: 1.0 deg
+[DASHBOARD TCP] Speed: 5 km/h | RPM: 900 | Steering: -9.0 deg

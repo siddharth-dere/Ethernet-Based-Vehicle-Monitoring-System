@@ -3,14 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <arpa/inet.h>
-
-#define PORT 8080
-
-typedef struct {
-    int speed;
-    int rpm;
-    float steering_angle;
-} VehicleData;
+#include "vehicle_protocol.h"
 
 void receive_udp() {
     int sock = socket(AF_INET, SOCK_DGRAM, 0);
@@ -19,9 +12,11 @@ void receive_udp() {
     
     VehicleData data;
     printf("Dashboard ECU Listening on UDP port %d...\n", PORT);
+    fflush(stdout);
     while(1) {
         recvfrom(sock, &data, sizeof(data), 0, NULL, NULL);
         printf("[DASHBOARD UDP] Speed: %d km/h | RPM: %d | Steering: %.1f deg\n", data.speed, data.rpm, data.steering_angle);
+        fflush(stdout);
     }
     close(sock);
 }
@@ -36,11 +31,13 @@ void receive_tcp() {
     listen(server_fd, 3);
     
     printf("Dashboard ECU Listening on TCP port %d...\n", PORT);
+    fflush(stdout);
     int new_socket = accept(server_fd, NULL, NULL);
     
     VehicleData data;
     while(recv(new_socket, &data, sizeof(data), 0) > 0) {
         printf("[DASHBOARD TCP] Speed: %d km/h | RPM: %d | Steering: %.1f deg\n", data.speed, data.rpm, data.steering_angle);
+        fflush(stdout);
     }
     close(new_socket);
     close(server_fd);
